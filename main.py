@@ -8,7 +8,7 @@ def get_avg_length(user_text):
 
 
 nums_or_text_prompt = input(
-    "Enter 'numbers' to process numbers (0,1,2,etc.) or 'text' to process alphameric text: "
+    "Enter 'numbers' to process numbers (0,1,2,etc.) or 'text' to process alphameric text:\n"
 )
 
 
@@ -32,8 +32,7 @@ if nums_or_text_prompt == "text":
             set(user_prompt.split(" ")), key=user_prompt.split(" ").count
         )
 
-        print(
-            f"""
+        text_analysis = f"""
             Text analysis results
             ---------------------
             Total characters: {characters}
@@ -43,12 +42,17 @@ if nums_or_text_prompt == "text":
             Avg word length: {avg_word_length} letters
             Avg sentence length: {avg_sentence_length} words
             """
-        )
+
+        with open("text_analysis.txt", "w") as f:
+            f.write(text_analysis)
+
+        print("\nText analysis was completed.\n\n", text_analysis)
+
     except Exception as e:
         print(f"Please try again. An error occurred: {e}")
 
 elif nums_or_text_prompt == "numbers":
-    user_nums = input("Enter a list of numbers separated by a space:\n")
+    user_nums = input("\nEnter a list of numbers separated by a space:\n")
 
     try:
         nums = [int(num) for num in user_nums.split(" ")]
@@ -58,8 +62,7 @@ elif nums_or_text_prompt == "numbers":
         most_frequent_num = max(set(nums), key=nums.count)
         avg_num = sum_nums / total_nums
 
-        print(
-            f"""
+        number_analysis = f"""
             Number analysis results
             ---------------------
             Total numbers: {total_nums}
@@ -68,7 +71,11 @@ elif nums_or_text_prompt == "numbers":
             Most frequent number: {most_frequent_num}
             Total Average: {avg_num}
             """
-        )
+
+        with open("number_analysis.txt", "w") as f:
+            f.write(number_analysis)
+
+        print("\nNumber analysis was completed.\n\n", number_analysis)
 
     except ValueError:
         print("Please enter only numbers separated by spaces.")

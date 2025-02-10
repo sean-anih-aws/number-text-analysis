@@ -5,16 +5,20 @@ This Python project analyzes user-inputted text or numbers to extract key statis
 ## Features
 
 ### Text Analysis
+
 - Counts total characters, words, and sentences.
 - Finds the most frequent word.
 - Calculates the average word length.
 - Determines the average sentence length.
+- Stores results as a .txt file in current working directory.
 
 ### Number Analysis
+
 - Counts total numbers.
 - Computes the sum and range of numbers.
 - Identifies the most frequent number.
 - Calculates the average value.
+- Stores results as a .txt file in current working directory.
 
 ## Installation
 
@@ -33,13 +37,18 @@ python analysis.py
 ## Example
 
 ### Text Analysis
+
 **Input:**
+
 ```sh
-Enter 'numbers' to process numbers (0,1,2,etc.) or 'text' to process alphameric text: text
+Enter 'numbers' to process numbers (0,1,2,etc.) or 'text' to process alphameric text:
+text
 Enter the text you want to analyze:
 This is a test. This is only a test!
 ```
+
 **Output:**
+
 ```sh
 Text analysis results
 ---------------------
@@ -52,13 +61,17 @@ Avg sentence length: 4.0 words
 ```
 
 ### Number Analysis
+
 **Input:**
+
 ```sh
 Enter 'numbers' to process numbers (0,1,2,etc.) or 'text' to process alphameric text: numbers
 Enter a list of numbers separated by a space:
 1 2 2 3 4 4 4 5
 ```
+
 **Output:**
+
 ```sh
 Number analysis results
 ---------------------
@@ -81,4 +94,3 @@ This project is licensed under the MIT License.
 ## Author
 
 Sean Anih
-
