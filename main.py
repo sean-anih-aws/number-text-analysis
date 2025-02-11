@@ -2,9 +2,12 @@ import re
 
 
 def get_avg_length(user_text):
-    sentences = re.split(r"[.!?]", user_text)
-    words_per_sentence = [len(s.split(" ")) for s in sentences]
-    return round(sum(words_per_sentence) / len(words_per_sentence), 1)
+    sentences = [s.strip() for s in re.split(r"[.!?]+", user_text) if s.strip()]
+    words_per_sentence = [len(s.split()) for s in sentences]
+
+    return (
+        round(sum(words_per_sentence) / len(words_per_sentence), 1) if sentences else 0
+    )
 
 
 nums_or_text_prompt = input(
